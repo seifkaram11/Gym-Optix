@@ -1,0 +1,12 @@
+/home/seifel-dinkaram/Backend/Projects/Layerd Monolith/Gym-Optix/Core/bin/Debug/net10.0/Core.deps.json
+/home/seifel-dinkaram/Backend/Projects/Layerd Monolith/Gym-Optix/Core/bin/Debug/net10.0/Core.dll
+/home/seifel-dinkaram/Backend/Projects/Layerd Monolith/Gym-Optix/Core/bin/Debug/net10.0/Core.pdb
+/home/seifel-dinkaram/Backend/Projects/Layerd Monolith/Gym-Optix/Core/obj/Debug/net10.0/Core.csproj.AssemblyReference.cache
+/home/seifel-dinkaram/Backend/Projects/Layerd Monolith/Gym-Optix/Core/obj/Debug/net10.0/Core.GeneratedMSBuildEditorConfig.editorconfig
+/home/seifel-dinkaram/Backend/Projects/Layerd Monolith/Gym-Optix/Core/obj/Debug/net10.0/Core.AssemblyInfoInputs.cache
+/home/seifel-dinkaram/Backend/Projects/Layerd Monolith/Gym-Optix/Core/obj/Debug/net10.0/Core.AssemblyInfo.cs
+/home/seifel-dinkaram/Backend/Projects/Layerd Monolith/Gym-Optix/Core/obj/Debug/net10.0/Core.csproj.CoreCompileInputs.cache
+/home/seifel-dinkaram/Backend/Projects/Layerd Monolith/Gym-Optix/Core/obj/Debug/net10.0/Core.dll
+/home/seifel-dinkaram/Backend/Projects/Layerd Monolith/Gym-Optix/Core/obj/Debug/net10.0/refint/Core.dll
+/home/seifel-dinkaram/Backend/Projects/Layerd Monolith/Gym-Optix/Core/obj/Debug/net10.0/Core.pdb
+/home/seifel-dinkaram/Backend/Projects/Layerd Monolith/Gym-Optix/Core/obj/Debug/net10.0/ref/Core.dll
