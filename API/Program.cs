@@ -1,30 +1,48 @@
-using System.Text;
-using System.Text.Json.Serialization;
+using Core;
 using Core.Configuration;
-using Core.Mapping;
 using FluentValidation.AspNetCore;
-using Gym_Optix.API.middlewares;
 using Infrastructure;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi;
-using Core;
+using System.Text;
+using System.Text.Json;
+using System.Text.Json.Serialization;
+using TestApi.ExceptionHandler;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
+builder.Services.AddControllers()
+                .AddJsonOptions(options =>
+                {
+                    // 1. Omit null properties from response JSON
+                    options.JsonSerializerOptions.DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull;
+
+                    // 2. Convert Enums ("Admin" instead of 0) for controllers
+                    options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
+                });
+//Convert Enums for minimal APIs
+builder.Services.ConfigureHttpJsonOptions(opt => { opt.SerializerOptions.Converters.Add(new JsonStringEnumConverter()); });
+
+builder.Services.AddProblemDetails(op => op.CustomizeProblemDetails = context =>
+{
+    //endpoint that failed
+    context.ProblemDetails.Instance = $"{context.HttpContext.Request.Method} {context.HttpContext.Request.Path}";
+    //requestId for tracing request in log file
+    context.ProblemDetails.Extensions["requestId"] = context.HttpContext.TraceIdentifier; 
+});
+
+builder.Services.AddExceptionHandler<GlobalExceptionHandler>();
+
 builder.Services.AddOpenApi();
-builder.Services.AddAutoMapper(cfg=>{},typeof(RegisterRequestMappingProfile).Assembly);
-builder.Services.Configure<JWTConfiguration>(builder.Configuration.GetSection("Auth"));
+ 
+builder.Services.Configure<JwtOptions>(builder.Configuration.GetSection("Auth"));
 
 builder.Services.AddCore();
 builder.Services.AddInfrastructure();
 
-builder.Services.AddScoped<JWTConfiguration>();
-
-builder.Services.AddControllers().AddJsonOptions(op =>{op.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());});
-builder.Services.ConfigureHttpJsonOptions(opt =>{opt.SerializerOptions.Converters.Add(new JsonStringEnumConverter());});
+builder.Services.AddScoped<JwtOptions>();
 
 builder.Services.AddFluentValidationAutoValidation();
 
@@ -64,36 +82,62 @@ builder.Services.AddCors(options =>
     });
 });
 
-builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-    .AddJwtBearer(options =>
+JwtOptions jwtOptions = builder.Configuration.GetSection("Auth").Get<JwtOptions>();
+builder.Services.AddAuthentication(options =>
+{
+    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+    options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
+}).AddJwtBearer(options =>
+{
+    options.SaveToken = true;
+    options.RequireHttpsMetadata = true;
+    options.TokenValidationParameters = new TokenValidationParameters()
     {
-        options.TokenValidationParameters = new TokenValidationParameters
+        ValidateLifetime = true,
+        ValidateIssuer = true,
+        ValidIssuer = jwtOptions.Issuer,
+        ValidateAudience = true,
+        ValidAudience = jwtOptions.Audience,
+        ValidateIssuerSigningKey = true,
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtOptions.SecurityKey))
+    };
+
+    // when Challenge, return ProblemDetails response
+    options.Events = new JwtBearerEvents
+    {
+        OnChallenge = async context =>
         {
-            ValidateIssuer = true,
-            ValidIssuer = builder.Configuration["Auth:Issuer"],
+            // Bypass default handling
+            context.HandleResponse();
 
-            ValidateAudience = true,
-            ValidAudience = builder.Configuration["Auth:Audience"],
+            context.Response.StatusCode = StatusCodes.Status401Unauthorized;
+            context.Response.ContentType = "application/problem+json";
 
-            ValidateLifetime = true,
+            var problemDetails = new ProblemDetails
+            {
+                Status = StatusCodes.Status401Unauthorized,
+                Title = "Unauthorized",
+                Detail = context.ErrorDescription ?? "You must provide a valid JWT bearer token to access this resource.",
+            };
 
-            ValidateIssuerSigningKey = true,
-            IssuerSigningKey = new SymmetricSecurityKey(
-                Encoding.UTF8.GetBytes(
-                    builder.Configuration["Auth:Token"]!))
-        };
-    });
+            await context.Response.WriteAsJsonAsync(problemDetails);
+        }
+    };
+});
+builder.Services.AddAuthorization();
 
 var app = builder.Build();
 
-app.UseExceptionHandlingMiddleware();
+app.UseExceptionHandler();
+
 
 app.UseRouting();
 if (app.Environment.IsDevelopment())
 {
+    app.MapOpenApi();
     app.UseSwagger();
     app.UseSwaggerUI();
-    app.MapOpenApi();
 }
 
 

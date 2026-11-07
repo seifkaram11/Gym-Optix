@@ -1,6 +1,6 @@
 namespace Core.Enum;
 
-public enum Genders
+public enum Gender
 {
     Male,Female
 }

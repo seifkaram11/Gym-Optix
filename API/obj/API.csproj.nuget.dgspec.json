@@ -1,37 +1,43 @@
 {
   "format": 1,
   "restore": {
-    "/home/seifel-dinkaram/Backend/Projects/Layerd Monolith/Gym-Optix/API/API.csproj": {}
+    "C:\\Users\\Omar\\source\\repos\\Gym-Optix\\API\\API.csproj": {}
   },
   "projects": {
-    "/home/seifel-dinkaram/Backend/Projects/Layerd Monolith/Gym-Optix/API/API.csproj": {
+    "C:\\Users\\Omar\\source\\repos\\Gym-Optix\\API\\API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/seifel-dinkaram/Backend/Projects/Layerd Monolith/Gym-Optix/API/API.csproj",
+        "projectUniqueName": "C:\\Users\\Omar\\source\\repos\\Gym-Optix\\API\\API.csproj",
         "projectName": "API",
-        "projectPath": "/home/seifel-dinkaram/Backend/Projects/Layerd Monolith/Gym-Optix/API/API.csproj",
-        "packagesPath": "/home/seifel-dinkaram/.nuget/packages/",
-        "outputPath": "/home/seifel-dinkaram/Backend/Projects/Layerd Monolith/Gym-Optix/API/obj/",
+        "projectPath": "C:\\Users\\Omar\\source\\repos\\Gym-Optix\\API\\API.csproj",
+        "packagesPath": "C:\\Users\\Omar\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Omar\\source\\repos\\Gym-Optix\\API\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "/home/seifel-dinkaram/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\Omar\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net10.0"
         ],
         "sources": {
-          "/usr/lib64/dotnet/library-packs": {},
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net10.0": {
+            "framework": "net10.0",
             "targetAlias": "net10.0",
             "projectReferences": {
-              "/home/seifel-dinkaram/Backend/Projects/Layerd Monolith/Gym-Optix/Core/Core.csproj": {
-                "projectPath": "/home/seifel-dinkaram/Backend/Projects/Layerd Monolith/Gym-Optix/Core/Core.csproj"
+              "C:\\Users\\Omar\\source\\repos\\Gym-Optix\\Core\\Core.csproj": {
+                "projectPath": "C:\\Users\\Omar\\source\\repos\\Gym-Optix\\Core\\Core.csproj"
               },
-              "/home/seifel-dinkaram/Backend/Projects/Layerd Monolith/Gym-Optix/Infrastructure/Infrastructure.csproj": {
-                "projectPath": "/home/seifel-dinkaram/Backend/Projects/Layerd Monolith/Gym-Optix/Infrastructure/Infrastructure.csproj"
+              "C:\\Users\\Omar\\source\\repos\\Gym-Optix\\Infrastructure\\Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\Omar\\source\\repos\\Gym-Optix\\Infrastructure\\Infrastructure.csproj"
               }
             }
           }
@@ -46,10 +52,11 @@
           "auditLevel": "low",
           "auditMode": "all"
         },
-        "SdkAnalysisLevel": "10.0.100"
+        "SdkAnalysisLevel": "10.0.400"
       },
       "frameworks": {
         "net10.0": {
+          "framework": "net10.0",
           "targetAlias": "net10.0",
           "dependencies": {
             "Google.Apis.Auth": {
@@ -60,9 +67,19 @@
               "target": "Package",
               "version": "[10.0.12, )"
             },
-            "Microsoft.AspNetCore.OpenApi": {
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
-              "version": "[10.0.12, )"
+              "version": "[10.0.14, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[10.0.14, )"
+            },
+            "System.Security.Cryptography.Pkcs": {
+              "target": "Package",
+              "version": "[10.0.14, )"
             }
           },
           "imports": [
@@ -84,7 +101,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/lib64/dotnet/sdk/10.0.111/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.402/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.AspNetCore": "(,10.0.32767]",
             "Microsoft.AspNetCore.Antiforgery": "(,10.0.32767]",
@@ -502,27 +519,33 @@
         }
       }
     },
-    "/home/seifel-dinkaram/Backend/Projects/Layerd Monolith/Gym-Optix/Core/Core.csproj": {
+    "C:\\Users\\Omar\\source\\repos\\Gym-Optix\\Core\\Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/seifel-dinkaram/Backend/Projects/Layerd Monolith/Gym-Optix/Core/Core.csproj",
+        "projectUniqueName": "C:\\Users\\Omar\\source\\repos\\Gym-Optix\\Core\\Core.csproj",
         "projectName": "Core",
-        "projectPath": "/home/seifel-dinkaram/Backend/Projects/Layerd Monolith/Gym-Optix/Core/Core.csproj",
-        "packagesPath": "/home/seifel-dinkaram/.nuget/packages/",
-        "outputPath": "/home/seifel-dinkaram/Backend/Projects/Layerd Monolith/Gym-Optix/Core/obj/",
+        "projectPath": "C:\\Users\\Omar\\source\\repos\\Gym-Optix\\Core\\Core.csproj",
+        "packagesPath": "C:\\Users\\Omar\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Omar\\source\\repos\\Gym-Optix\\Core\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "/home/seifel-dinkaram/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\Omar\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net10.0"
         ],
         "sources": {
-          "/usr/lib64/dotnet/library-packs": {},
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net10.0": {
+            "framework": "net10.0",
             "targetAlias": "net10.0",
             "projectReferences": {}
           }
@@ -537,10 +560,11 @@
           "auditLevel": "low",
           "auditMode": "all"
         },
-        "SdkAnalysisLevel": "10.0.100"
+        "SdkAnalysisLevel": "10.0.400"
       },
       "frameworks": {
         "net10.0": {
+          "framework": "net10.0",
           "targetAlias": "net10.0",
           "dependencies": {
             "AutoMapper": {
@@ -558,14 +582,6 @@
             "Microsoft.Extensions.DependencyInjection.Abstractions": {
               "target": "Package",
               "version": "[10.0.12, )"
-            },
-            "Microsoft.Extensions.Identity.Core": {
-              "target": "Package",
-              "version": "[10.0.12, )"
-            },
-            "System.IdentityModel.Tokens.Jwt": {
-              "target": "Package",
-              "version": "[8.23.0, )"
             }
           },
           "imports": [
@@ -584,7 +600,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/lib64/dotnet/sdk/10.0.111/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.402/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.CSharp": "(,4.7.32767]",
             "Microsoft.VisualBasic": "(,10.4.32767]",
@@ -862,31 +878,37 @@
         }
       }
     },
-    "/home/seifel-dinkaram/Backend/Projects/Layerd Monolith/Gym-Optix/Infrastructure/Infrastructure.csproj": {
+    "C:\\Users\\Omar\\source\\repos\\Gym-Optix\\Infrastructure\\Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/seifel-dinkaram/Backend/Projects/Layerd Monolith/Gym-Optix/Infrastructure/Infrastructure.csproj",
+        "projectUniqueName": "C:\\Users\\Omar\\source\\repos\\Gym-Optix\\Infrastructure\\Infrastructure.csproj",
         "projectName": "Infrastructure",
-        "projectPath": "/home/seifel-dinkaram/Backend/Projects/Layerd Monolith/Gym-Optix/Infrastructure/Infrastructure.csproj",
-        "packagesPath": "/home/seifel-dinkaram/.nuget/packages/",
-        "outputPath": "/home/seifel-dinkaram/Backend/Projects/Layerd Monolith/Gym-Optix/Infrastructure/obj/",
+        "projectPath": "C:\\Users\\Omar\\source\\repos\\Gym-Optix\\Infrastructure\\Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\Omar\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Omar\\source\\repos\\Gym-Optix\\Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "/home/seifel-dinkaram/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\Omar\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net10.0"
         ],
         "sources": {
-          "/usr/lib64/dotnet/library-packs": {},
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net10.0": {
+            "framework": "net10.0",
             "targetAlias": "net10.0",
             "projectReferences": {
-              "/home/seifel-dinkaram/Backend/Projects/Layerd Monolith/Gym-Optix/Core/Core.csproj": {
-                "projectPath": "/home/seifel-dinkaram/Backend/Projects/Layerd Monolith/Gym-Optix/Core/Core.csproj"
+              "C:\\Users\\Omar\\source\\repos\\Gym-Optix\\Core\\Core.csproj": {
+                "projectPath": "C:\\Users\\Omar\\source\\repos\\Gym-Optix\\Core\\Core.csproj"
               }
             }
           }
@@ -901,39 +923,38 @@
           "auditLevel": "low",
           "auditMode": "all"
         },
-        "SdkAnalysisLevel": "10.0.100"
+        "SdkAnalysisLevel": "10.0.400"
       },
       "frameworks": {
         "net10.0": {
+          "framework": "net10.0",
           "targetAlias": "net10.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[10.0.14, )"
+            },
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
-              "version": "[10.0.12, )"
-            },
-            "Microsoft.EntityFrameworkCore.Design": {
-              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[10.0.12, )"
+              "version": "[10.0.14, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[10.0.12, )"
+              "version": "[10.0.14, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[10.0.12, )"
-            },
-            "Microsoft.Extensions.Configuration.Abstractions": {
-              "target": "Package",
-              "version": "[10.0.12, )"
+              "version": "[10.0.14, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[10.2.3, )"
+            },
+            "System.Security.Cryptography.Pkcs": {
+              "target": "Package",
+              "version": "[10.0.14, )"
             }
           },
           "imports": [
@@ -952,7 +973,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/lib64/dotnet/sdk/10.0.111/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.402/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.CSharp": "(,4.7.32767]",
             "Microsoft.VisualBasic": "(,10.4.32767]",

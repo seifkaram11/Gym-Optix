@@ -1,8 +1,8 @@
 namespace Core.Configuration;
-public class JWTConfiguration
+public class JwtOptions
 {
     public string Issuer { get; set; } = null!;
     public string Audience { get; set; } = null!;
-    public string Token { get; set; } = null!;
-    public string ExpiryDays { get; set; }=null!;
+    public string SecurityKey { get; set; } = null!;
+    public double ExpiryMinutes { get; set; }
 }
